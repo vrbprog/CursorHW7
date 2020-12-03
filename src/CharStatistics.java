@@ -11,7 +11,7 @@ public class CharStatistics {
     private SortedMap<Character, Integer> separatorsExtraTree;
     private SortedMap<Character, Integer> separatorsExtra2Tree;
     private SortedMap<Character, Integer> separatorsExtra3Tree;
-    private boolean mapIsInit = false;
+    private boolean mapMayBeInit = false;
     private String currentString;
 
     public CharStatistics(String input) {
@@ -23,7 +23,7 @@ public class CharStatistics {
 
         if (input != null) {
             currentString = input;
-            mapIsInit = true;
+            mapMayBeInit = true;
         } else System.out.println("You input null string!");
     }
 
@@ -52,7 +52,7 @@ public class CharStatistics {
     }
 
     public void printCharStatistics() {
-        if (mapIsInit) {
+        if (mapMayBeInit) {
             initCharMap(currentString);
             generateStatistics();
             System.out.println("\n\rLetters statistics in string");
