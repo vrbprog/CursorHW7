@@ -43,7 +43,7 @@ public class CharStatistics {
 
     private void generateStatistics() {
         digitTree = generalTree.subMap('0', ':');
-        separatorsTree = generalTree.subMap(' ', '0');
+        separatorsTree = generalTree.subMap('!', '0');
         separatorsExtraTree = generalTree.subMap(':', 'A');
         separatorsExtra2Tree = generalTree.subMap('[', 'a');
         separatorsExtra3Tree = generalTree.subMap('{', (char) 177);
@@ -60,14 +60,13 @@ public class CharStatistics {
                     "; total number of letters in string - " + getTotalNumber(alphaTreeLat));
             if (alphaTreeCyr.size() > 0) System.out.println("Cyrillic letters : " + alphaTreeCyr +
                     "; total number of letters in string - " + getTotalNumber(alphaTreeCyr));
-            Integer numberSpaces = separatorsTree.get(' ');
+            Integer numberSpaces = generalTree.get(' ');
             if (numberSpaces == null) numberSpaces = 0;
             System.out.println("Number of spaces - " + numberSpaces);
             System.out.println("Number of digits - " + getTotalNumber(digitTree));
             System.out.println("Number of separators - " +
                     (getTotalNumber(separatorsTree) + getTotalNumber(separatorsExtraTree) +
-                            getTotalNumber(separatorsExtra2Tree) + getTotalNumber(separatorsExtra3Tree) -
-                            numberSpaces));
+                            getTotalNumber(separatorsExtra2Tree) + getTotalNumber(separatorsExtra3Tree)));
             System.out.println();
         }
     }
