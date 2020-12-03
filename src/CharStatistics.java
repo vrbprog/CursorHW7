@@ -16,11 +16,6 @@ public class CharStatistics {
 
     public CharStatistics(String input) {
         generalTree = new TreeMap<>();
-        alphaTreeLat = new TreeMap<>();
-        alphaTreeCyr = new TreeMap<>();
-        digitTree = new TreeMap<>();
-        separatorsTree = new TreeMap<>();
-
         if (input != null) {
             currentString = input;
             mapMayBeInit = true;
