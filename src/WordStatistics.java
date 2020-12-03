@@ -18,8 +18,8 @@ public class WordStatistics {
 
     public void printWordStatistics() {
         loadWordMap();
-        findMaxWold();
-        findMinWold();
+        findMaxWord();
+        findMinWord();
         System.out.println(this);
     }
 
@@ -62,7 +62,7 @@ public class WordStatistics {
         }
     }
 
-    private void findMaxWold() {
+    private void findMaxWord() {
         int max = Integer.MIN_VALUE;
         for (Map.Entry<String, Integer> map : dictionary.entrySet()) {
             if (map.getKey().length() >= max) {
@@ -72,7 +72,7 @@ public class WordStatistics {
         }
     }
 
-    private void findMinWold() {
+    private void findMinWord() {
         int min = Integer.MAX_VALUE;
         for (Map.Entry<String, Integer> map : dictionary.entrySet()) {
             if (map.getKey().length() < min) {
