@@ -84,7 +84,7 @@ public class WordStatistics {
 
     @Override
     public String toString() {
-        return "Words statistics in file\n\r" +
+        return "Words statistics in file: " + nameFile + "\n\r" +
                 "WordStatistics{" + " Longest word: " +
                 maxEntry.getKey() + " - " + maxEntry.getValue() + " time(s)" +
                 ", Shortest word: " + minEntry.getKey() + " - "
