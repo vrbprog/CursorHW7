@@ -66,7 +66,8 @@ public class CharStatistics {
             System.out.println("Number of digits - " + getTotalNumber(digitTree));
             System.out.println("Number of separators - " +
                     (getTotalNumber(separatorsTree) + getTotalNumber(separatorsExtraTree) +
-                            getTotalNumber(separatorsExtra2Tree) + getTotalNumber(separatorsExtra3Tree)));
+                            getTotalNumber(separatorsExtra2Tree) + getTotalNumber(separatorsExtra3Tree) -
+                            numberSpaces));
             System.out.println();
         }
     }
