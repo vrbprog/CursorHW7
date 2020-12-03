@@ -7,10 +7,9 @@ import java.util.Map;
 public class WordStatistics {
 
     private final Map<String, Integer> dictionary;
-    private Map.Entry<String, Integer> maxEntry = null;
-    private Map.Entry<String, Integer> minEntry = null;
+    private Map.Entry<String, Integer> maxEntry;
+    private Map.Entry<String, Integer> minEntry;
     private final String nameFile;
-
 
     public WordStatistics(String nameFile) {
         dictionary = new HashMap<>();
