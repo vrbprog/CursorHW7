@@ -10,16 +10,19 @@ public class WordStatistics {
     private Map.Entry<String, Integer> maxEntry;
     private Map.Entry<String, Integer> minEntry;
     private final String nameFile;
+    private boolean isStatistics;
 
     public WordStatistics(String nameFile) {
         dictionary = new HashMap<>();
         this.nameFile = nameFile;
+        isStatistics = false;
     }
 
     public void printWordStatistics() {
         loadWordMap();
         findMaxWord();
         findMinWord();
+        isStatistics = true;
         System.out.println(this);
     }
 
@@ -27,7 +30,7 @@ public class WordStatistics {
         StringBuilder result = new StringBuilder(str.length());
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
-            if (Character.isAlphabetic(c) || Character.isSpaceChar(c)) {
+            if (Character.isAlphabetic(c) || Character.isSpaceChar(c) || c == '-') {
                 //if (Character.isAlphabetic(c) || Character.isDigit(c) || Character.isSpaceChar(c)) {
                 result.append(c);
             }
@@ -84,11 +87,13 @@ public class WordStatistics {
 
     @Override
     public String toString() {
-        return "Words statistics in file: " + nameFile + "\n\r" +
-                "WordStatistics{" + " Longest word: " +
-                maxEntry.getKey() + " - " + maxEntry.getValue() + " time(s)" +
-                ", Shortest word: " + minEntry.getKey() + " - "
-                + minEntry.getValue() + " time(s)" + " " + '}';
+        if(isStatistics)
+            return "Words statistics in file: " + nameFile + "\n\r" +
+                    "WordStatistics{" + " Longest word: " +
+                    maxEntry.getKey() + " - " + maxEntry.getValue() + " time(s)" +
+                    ", Shortest word: " + minEntry.getKey() + " - "
+                    + minEntry.getValue() + " time(s)" + " " + '}';
+        else return "No statistics";
     }
 }
 

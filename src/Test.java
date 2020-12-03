@@ -11,5 +11,6 @@ public class Test {
         String windowsFilePath = "src" + File.separator + "filename.txt";
         WordStatistics wordStatistics = new WordStatistics(windowsFilePath);
         wordStatistics.printWordStatistics();
+
     }
 }
